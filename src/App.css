@@ -31,3 +31,133 @@
     transform: rotate(360deg);
   }
 }
+
+.grid {
+  /*display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;*/
+  padding: .4em;
+}
+
+.grid span {
+  width: 29px;
+  height: 30px;
+  text-align: center;
+  display: inline-block;
+}
+
+.y-overflow {
+  overflow-y: scroll;
+  max-height: 100vh;
+  height: 100%;
+}
+
+.grid .emoji {
+  transition: .2s;
+}
+
+.app {
+  max-height: 100vh;
+  height: 100vh;
+}
+
+.grid .emoji:hover {
+  transition: .1s ease-in-out;
+  transform: scale(1.5);
+  /*box-shadow: 0px 2px 12px 2px #00000040;
+  border: 2px solid grey;
+  */
+  cursor: pointer;
+  text-shadow: 0px 1px 4px black;
+}
+
+.input-group-text {
+  padding: 0em .4em;
+}
+
+.container, .container .row, .container .row .col-12 {}
+
+.mr-np {
+  margin-right: -15px;
+}
+.ml-np {
+  margin-left: -15px;
+}
+.animationTest {
+  background: linear-gradient(270deg, #ff9ef5, #ad80ff, #8090ff, #80d9ff);
+  background-size: 800% 800%;
+  -webkit-animation: animationTest 30s ease infinite;
+  -moz-animation: animationTest 30s ease infinite;
+  animation: animationTest 30s ease infinite;
+}
+
+@-webkit-keyframes animationTest {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes animationTest {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes animationTest {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.bar {
+  height: 5px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+img.gif {
+  max-width: 100%;
+  height: auto;
+  transition: .2s;
+}
+
+img.gif:hover{
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  opacity: .8;
+}
+
+input {
+  transition: .2s;
+}
+input.waiting, 
+input.waiting:focus {
+  transition: .2s ease-in-out;
+  /*
+  background-color: #ffdeff;
+  background-color: black;
+  border-color: #ff9ef5;
+  color: white;*/
+}
+input.waiting:focus {
+  border-color: #ff9ef5;
+  box-shadow: 0 0 0 0.2rem rgba(247, 158, 236, 0.25);
+}
