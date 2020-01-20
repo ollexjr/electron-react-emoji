@@ -13,15 +13,7 @@ const url = require('url');
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 electron.ipcMain.on('request-keysend', (event, arg) => {
-    // Displays the object sent from the renderer process:
-    //{
-    //    message: "Hi",
-    //    someData: "Let's go"
-    //}
-    console.log(
-        arg
-    );
-    //robot.typeString(arg);
+    return
 });
 
 function createWindow() {

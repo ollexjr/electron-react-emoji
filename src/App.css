@@ -151,11 +151,6 @@ input {
 input.waiting, 
 input.waiting:focus {
   transition: .2s ease-in-out;
-  /*
-  background-color: #ffdeff;
-  background-color: black;
-  border-color: #ff9ef5;
-  color: white;*/
 }
 input.waiting:focus {
   border-color: #ff9ef5;

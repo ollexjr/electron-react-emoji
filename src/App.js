@@ -11,6 +11,10 @@ const electron = window.require('electron')
 const giphyApi = require('giphy-api')();
 
 
+/**
+ * TODO:
+ * rewrite app in typescript and streamline data processing
+ */
 class CircularArray {
   constructor(max) {
     this.ptr = 0;
@@ -24,19 +28,13 @@ class CircularArray {
   }
 }
 
-function requestSendKeys() {
+function requestSendKeys(data) {
   electron.ipcRenderer.send('request-keysend', {
-    arg1: "test argument lol",
+    arg1: "test argument",
   });
 }
 function hideWindow() {
   electron.remote.getCurrentWindow().hide();
-}
-
-function splitSymbol(val) {
-  return val.split(" ").map(function (item) {
-    return item.trim().toLowerCase();
-  })
 }
 
 class EmojiIndex {
@@ -86,7 +84,6 @@ class EmojiIndex {
     this.cache.push({ key: phrase, table: m });
   }
   get(phrase) {
-    console.log("===============================");
     let p = phrase.split(" ").map(function (item) {
       return item.trim();
     });
@@ -104,9 +101,6 @@ class EmojiIndex {
       });
     };
     let m = this._emoji.filter(function (item, index, array) {
-      //if (index > 1000)
-      //  return false;
-
       let found = findOne(item.keywords, p);
       if (found)
         console.log("Found matching:");
@@ -442,7 +436,7 @@ class GifView extends React.Component {
     //waiting
     return (
       this.props.src.data.map((value, index) => {
-        //console.log("[GifView] Index: %d", index, value.images.downsized.url);
+        console.log("[GifView] Index: %d", index, value.images.downsized.url);
         return <CGif
           src={value.images.downsized_medium.url}
           key={index}
@@ -450,32 +444,7 @@ class GifView extends React.Component {
           handleClick={this.handleSelection} />
       })
     )
-    /*if (this.state.getState == 1) {
-      return <div>Getting!</div>
-    }
-    //got
-    else if (this.state.getState == 2) {
-      return <div>Got!</div>
-    } else {
-      return <div>Nothing to fetch</div>
-    }*/
   }
-}
-
-class CArrowList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <div></div>
-  }
-}
-
-class CSlidingOverlay extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
 }
 
 class App extends Component {
